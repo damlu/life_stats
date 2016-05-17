@@ -1,0 +1,21 @@
+{
+  "name": "life_stats",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.0.2",
+    "react-addons-pure-render-mixin": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-mixin": "^3.0.5",
+    "react-transform-catch-errors": "^1.0.2",
+    "react-transform-hmr": "^1.0.4"
+  },
+  "devDependencies": {
+    "babel-plugin-react-transform": "^2.0.2",
+    "react-hot-loader": "^3.0.0-beta.2",
+    "redbox-react": "^1.2.4"
+  }
+}
