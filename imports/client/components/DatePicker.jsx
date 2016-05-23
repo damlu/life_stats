@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 export default class DatePicker extends Component {
 
     componentDidMount() {
-        $('#my-datepicker').datetimepicker();
+        $('#datepicker-input').datetimepicker();
     }
 
     render() {
         return (
-            <div className="position-relative">
-                <input type="text" className="form-control " id="my-datepicker" />
+            <div className="position-relative" id="datepicker-div">
+                <input type="text" className="form-control" id="datepicker-input" />
             </div>
         );
     }

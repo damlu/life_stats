@@ -12,7 +12,7 @@
     "forms"                : true,
     "buttons"              : true,
 
-    "component-animations" : false,
+    "component-animations" : true,
     "dropdowns"            : true,
     "button-groups"        : true,
     "input-groups"         : true,
@@ -48,7 +48,7 @@
     "tab"                  : true,
     "transition"           : true,
 
-    "utilities"            : false,
-    "responsive-utilities" : false
+    "utilities"            : true,
+    "responsive-utilities" : true
   }
 }
