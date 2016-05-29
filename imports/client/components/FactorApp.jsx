@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import FactorList from './FactorList';
+import LineGraph from './LineGraph';
 
 
 const FactorApp = () => {
@@ -29,10 +30,11 @@ const Menu = () => {
 const Data = () => {
     return (
         <div className="content">
-            <h1>No data yet</h1>
+            <LineGraph />
         </div>
     );
 };
+
 const Modals = () => {
     return (
         <div>

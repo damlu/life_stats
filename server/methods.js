@@ -10,10 +10,11 @@ Meteor.methods({
 
         return result;
     },
-    addLog(factor, value, date_time = new Date()) {
-        const log = {value, date_time};
+    addLog({factor, value, dateTime}) {
+        console.log(dateTime);
+        /*const log = {_id: new Meteor.Collection.ObjectID().valueOf(), value, dateTime};
         result = Factors.update(factor._id, {$set: {logs:[...factor.logs, log]}});
 
-        return result;
+        return result;*/
     }
 });
