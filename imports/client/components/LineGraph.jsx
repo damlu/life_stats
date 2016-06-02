@@ -24,11 +24,12 @@ class LineGraph extends React.Component {
         for (let factor of factors) {
             let factorLine = {name:factor.name, values:[]};
             for (let log of factor.logs) {
-                factorLine.values.push({x:log.date_time, y:log.value});
+                factorLine.values.push({x:log.dateTime, y:log.value});
             }
             result.push(factorLine);
         }
 
+        console.log(result);
 
 
         return result;

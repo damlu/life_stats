@@ -51,8 +51,8 @@ class FactorItem extends React.Component {
 
     onLogClick(value) {
         const {factor, dispatchAddLog} = this.props;
-        //const dateTime = $(this.refs.datepicker).datepicker('getDate');
-        const dateTime = $(this.refs.datetime).getValue;
+        const dateTime = this.refs.datetime.getMoment().toDate();
+        console.log(dateTime);
         dispatchAddLog({factor, dateTime, value});
     }
 
@@ -88,8 +88,7 @@ class ValueInput extends React.Component {
         const {onClick} = this.props;
         const inputNode = this.refs.input;
 
-        //onClick(inputNode.value)
-        console.log(inputNode.value);
+        onClick(inputNode.value)
     }
 
     render() {
@@ -151,7 +150,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(addLog(data))
         }
     }
-}
+};
 
 
 const FactorContainer = createContainer(() => {
