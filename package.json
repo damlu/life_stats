@@ -5,6 +5,8 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "d3": "^3.5.17",
+    "form-serialize": "^0.7.1",
     "meteor-node-stubs": "~0.2.0",
     "moment": "^2.13.0",
     "rd3": "^0.6.3",
@@ -14,8 +16,12 @@
     "react-bootstrap-datetime": "0.0.9",
     "react-dom": "^15.0.2",
     "react-mixin": "^3.0.5",
+    "react-redux": "^4.4.5",
     "react-transform-catch-errors": "^1.0.2",
-    "react-transform-hmr": "^1.0.4"
+    "react-transform-hmr": "^1.0.4",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
