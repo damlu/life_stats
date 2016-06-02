@@ -87,7 +87,9 @@ class ValueInput extends React.Component {
     onLogClick() {
         const {onClick} = this.props;
         const inputNode = this.refs.input;
-        onClick(inputNode.value)
+
+        //onClick(inputNode.value)
+        console.log(inputNode.value);
     }
 
     render() {
@@ -100,7 +102,7 @@ class ValueInput extends React.Component {
             case 'FLOAT':
                 result = (
                     <div className="input-group">
-                        <input type="number" className="form-control" ref="input"/>
+                        <input type="number" className="form-control" ref="input" defaultValue="0"/>
                     <span className="input-group-btn">
                         <button className="btn btn-secondary" type="button"
                                 onClick={this.onLogClick.bind(this)}>Log It</button>
@@ -112,7 +114,7 @@ class ValueInput extends React.Component {
                 result = (
                     <div className="input-group">
                         <select className="form-control" ref="input">
-                            <option value="1">Yes</option>
+                            <option value="1" selected="selected">Yes</option>
                             <option value="0">No</option>
                         </select>
                     <span className="input-group-btn">

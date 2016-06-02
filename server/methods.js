@@ -12,9 +12,9 @@ Meteor.methods({
     },
     addLog({factor, value, dateTime}) {
         console.log(dateTime);
-        /*const log = {_id: new Meteor.Collection.ObjectID().valueOf(), value, dateTime};
+        const log = {_id: new Meteor.Collection.ObjectID().valueOf(), value, dateTime};
         result = Factors.update(factor._id, {$set: {logs:[...factor.logs, log]}});
 
-        return result;*/
+        return result;
     }
 });
