@@ -13,6 +13,7 @@ caching-html-compiler@1.0.6
 callback-hook@1.0.8
 check@1.2.1
 d3js:d3@3.5.8
+davidqwk:c3@0.0.1
 ddp@1.2.5
 ddp-client@1.2.7
 ddp-common@1.2.5
@@ -60,6 +61,7 @@ reactive-var@1.0.9
 reload@1.1.8
 retry@1.0.7
 routepolicy@1.0.10
+sergeyt:d3@3.4.1
 spacebars@1.0.11
 spacebars-compiler@1.0.11
 standard-minifier-css@1.0.6

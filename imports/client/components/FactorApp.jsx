@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import FactorList from './FactorList';
 import LineGraph from './LineGraph';
+import Graph from './Graph';
 
 
 const FactorApp = () => {
@@ -30,7 +31,7 @@ const Menu = () => {
 const Data = () => {
     return (
         <div className="content">
-            <LineGraph />
+            <Graph />
         </div>
     );
 };

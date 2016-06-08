@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createContainer } from 'meteor/react-meteor-data';
 import Factors from '../../collection';
-import d3 from 'd3';
+//import d3 from 'd3';
+/*
 import rd3 from 'rd3';
 
 const {
@@ -14,7 +15,7 @@ const {
     ScatterChart,
     Treemap,
 } = rd3;
-
+*/
 
 class LineGraph extends React.Component {
 
