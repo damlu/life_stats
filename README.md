@@ -2,7 +2,7 @@
 
 A simple tool for recording and datamining your _____ (life, nosepicking habits, whatever). 
 
-**Barely operational:** See the app in its infancy [here](http://lifestats.drakemalu.com)
+**Barely operational:** See the app in its infancy [here](http://lifestats.drakemalu.com).
 
 #####ToDos:
 - [ ] Fix X-Axis labeling 
