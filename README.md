@@ -2,4 +2,4 @@
 
 A simple tool for recording and datamining your life. 
 
-**Not yet operational -- come back soon for more info!**
+**Barely operational:** See the app in its infancy [here](http://lifestats.drakemalu.com)
