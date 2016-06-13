@@ -68,9 +68,16 @@ class Graph extends React.Component {
                         text: 'Date'
                     },
                     type: 'timeseries',
+                    localtime: true,
                     tick: {
-                        format: '%Y-%m-%d'
-                    }
+                        fit: true,
+                        format: '%Y-%m-%d',
+                        rotate: -40,
+                        culling: {
+                            max: 6
+                        }
+                    },
+                    height: 75
                 }
             }
         });
@@ -82,7 +89,7 @@ class Graph extends React.Component {
         return (
             <div id='chart-container'>
                 {/*JSON.stringify(factors)*/}
-                {JSON.stringify(factorDisplayList)}
+                {/*JSON.stringify(factorDisplayList)*/}
                 <div id="chart"></div>
             </div>
 

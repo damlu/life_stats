@@ -5,7 +5,7 @@ A simple tool for recording and datamining your _____ (life, nosepicking habits,
 **Barely operational:** See the app in its infancy [here](http://lifestats.drakemalu.com).
 
 #####ToDos:
-- [ ] Fix X-Axis labeling 
+- [x] Fix X-Axis labeling
 - [ ] Restructure for Mobile
 - [ ] Show logged days on datepicker
   - [ ] List logs for selected day, make editable
