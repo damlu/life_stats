@@ -1,8 +1,8 @@
 node_modules/
 .idea/
 builds/
+.meteor/local/
 mup.json
 npm-debug.log
-package.json
 settings.json
 deployment_token.json
