@@ -1,9 +1,6 @@
 {
   "name": "life_stats",
   "private": true,
-  "scripts": {
-    "start": "meteor run"
-  },
   "dependencies": {
     "form-serialize": "^0.7.1",
     "meteor-node-stubs": "~0.2.0",
