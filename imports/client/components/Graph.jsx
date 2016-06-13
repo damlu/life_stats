@@ -12,7 +12,7 @@ class Graph extends React.Component {
         let data = [];
         let keys = [];
         let dateMap = {};
-        console.log(factors);
+
         for (let factor of factors) {
             keys.push(factor.name);
             for (let log of factor.logs) {
@@ -48,8 +48,8 @@ class Graph extends React.Component {
         //console.log(this.props);
         console.log(this.getLineData(nextProps.factors));
         this.renderChart(this.getLineData(nextProps.factors));
-        return false;
-        //return true;
+       // return false;
+        return true;
     }
 
     renderChart({data, keys}) {
@@ -81,7 +81,7 @@ class Graph extends React.Component {
 
         return (
             <div id='chart-container'>
-                {JSON.stringify(factors)}
+                {/*JSON.stringify(factors)*/}
                 {JSON.stringify(factorDisplayList)}
                 <div id="chart"></div>
             </div>

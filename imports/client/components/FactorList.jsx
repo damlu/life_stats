@@ -4,20 +4,20 @@ import { createContainer } from 'meteor/react-meteor-data';
 import Factors from '../../collection';
 import DatePicker from './DatePicker';
 import AddFactor from './AddFactor';
-import { displayFactor, addLog } from '../actions/actions';
+import { toggleFactor, addLog } from '../actions/actions';
 import {DateTime} from 'react-bootstrap-datetime';
 
 class FactorList extends React.Component {
 
     render() {
-        const {dispatch, factors, dispatchDisplayFactor, dispatchAddLog} = this.props;
+        const {dispatch, factors, factorDisplayList, dispatchToggleFactor, dispatchAddLog} = this.props;
 
         return (
 
             <div className="panel-group" id="factor-list" role="tablist" aria-multiselectable="true">
 
                 {factors.map((factor, i) => {
-                    return (<FactorItem factor={factor} key={factor._id} dispatchDisplayFactor={dispatchDisplayFactor} dispatchAddLog={dispatchAddLog}/>);
+                    return (<FactorItem factor={factor} displayed={factorDisplayList[factor._id]} key={factor._id} dispatchToggleFactor={dispatchToggleFactor} dispatchAddLog={dispatchAddLog}/>);
 
                 })}
 
@@ -40,13 +40,11 @@ class FactorItem extends React.Component {
         //$('#datepicker-div').detach().appendTo($(e.delegateTarget).find('.datepicker-container'));
     }
 
-    onDisplayClick(e) {
+    onToggleClick(e) {
         e.stopPropagation();
         e.preventDefault();
-        const {factor, dispatchDisplayFactor} = this.props;
-        let data = {};
-        data[factor._id] = true;
-        dispatchDisplayFactor(data);
+        const {factor, dispatchToggleFactor} = this.props;
+        dispatchToggleFactor(factor._id);
     }
 
     onLogClick(value) {
@@ -57,15 +55,18 @@ class FactorItem extends React.Component {
     }
 
     render() {
-        const {dispatch, factor, dispatchAddLog} = this.props;
+        const {dispatch, factor, displayed, dispatchAddLog} = this.props;
+
+        const toggleButtonClass = "toggle-button " + (displayed ? "text-danger" : "text-success");
+        const toggleIconClass = "glyphicon " + (displayed ? "glyphicon-indent-right" : "glyphicon-indent-left");
 
         return (
             <div className="panel" ref="panel">
                 <div className="panel-heading clickable inline-block" role="tab" id={"heading-" + factor._id} data-toggle="collapse" data-target={"#collapse-" + factor._id} aria-expanded="false" data-parent="#factor-list" aria-controls={"collapse-" + factor._id}>
                     <h4 className="panel-title">{factor.name}</h4>
                 </div>
-                <div className="display-button" onClick={this.onDisplayClick.bind(this)}>
-                    <span className="glyphicon glyphicon-indent-left" aria-hidden="true"></span>
+                <div className={toggleButtonClass} onClick={this.onToggleClick.bind(this)}>
+                    <span className={toggleIconClass} aria-hidden="true"></span>
                 </div>
                 <div id={"collapse-" + factor._id} className="panel-collapse collapse" role="tabpanel" aria-labelledby={"heading-" + factor._id}>
                     <div className="panel-body">
@@ -134,17 +135,20 @@ class ValueInput extends React.Component {
 
 
 FactorList.propTypes = {
-    factors: PropTypes.array.isRequired
+    factors: PropTypes.array.isRequired,
+    factorDisplayList: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
-    return {};
+    return {
+        factorDisplayList: state.factorDisplayList
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchDisplayFactor: (factor) => {
-            dispatch(displayFactor(factor))
+        dispatchToggleFactor: (factor) => {
+            dispatch(toggleFactor(factor))
         },
         dispatchAddLog: (data) => {
             dispatch(addLog(data))

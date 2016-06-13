@@ -1,2 +1,8 @@
 node_modules/
 .idea/
+builds/
+mup.json
+npm-debug.log
+package.json
+settings.json
+deployment_token.json

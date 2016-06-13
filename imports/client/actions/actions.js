@@ -1,7 +1,4 @@
-export const ADD_FACTOR = "ADD_FACTOR";
-export const ADD_LOG = "ADD_LOG";
-export const DISPLAY_FACTOR = "DISPLAY_FACTOR";
-
+import * as types from './types';
 
 export function addFactor(text) {
     return () => {
@@ -15,9 +12,9 @@ export function addLog(data) {
     };
 }
 
-export function displayFactor(data) {
+export function toggleFactor(id) {
     return {
-        type: DISPLAY_FACTOR,
-        data
+        type: types.TOGGLE_FACTOR,
+        id
     };
 }
