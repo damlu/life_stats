@@ -78,6 +78,11 @@ class Graph extends React.Component {
                         }
                     },
                     height: 75
+                },
+                y: {
+                    tick: {
+                        format: d3.format('.2f')
+                    }
                 }
             }
         });
