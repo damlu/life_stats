@@ -17,12 +17,12 @@ class Graph extends React.Component {
         for (let factor of factors) {
             keys.push(factor.name);
             for (let log of factor.logs) {
-                let dateString = log.dateTime.toLocaleFormat('%Y-%m-%d');
+                let dateString = log.dateTime.toLocaleDateString();
 
                 let dateVal = dateMap[dateString];
                 if (!dateVal) {
                     dateVal = dateMap[dateString] = {
-                        date: dateString
+                        date: log.dateTime
                     };
                 }
 
@@ -81,7 +81,8 @@ class Graph extends React.Component {
             keys: {
                 x: 'date',
                 value: keys
-            }
+            },
+            unload: true
         });
     }
 
@@ -92,8 +93,7 @@ class Graph extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-
-        console.log(this.getLineData(nextProps.factors));
+        console.log(this.props.factors, nextProps.factors);
         this.updateChart(this.getLineData(nextProps.factors));
 
         return false;

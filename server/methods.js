@@ -22,6 +22,7 @@ Meteor.methods({
 
             return result;
         } else {
+            console.log(dateTime);
             throw new Meteor.Error(...errors.InvalidLogDate);
         }
     },

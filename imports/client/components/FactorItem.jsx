@@ -38,8 +38,8 @@ class FactorItem extends React.Component {
 
     onLogClick(value) {
         const {factor, dispatchAddLog} = this.props;
-        const dateTime = this.state.date;
-        console.log(dateTime);
+        const dateTime = this.state.date.toDate();
+        //console.log(dateTime);
         dispatchAddLog({factor, dateTime, value});
     }
 
