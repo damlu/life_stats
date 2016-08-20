@@ -5,6 +5,7 @@ import Factors from '../../collection';
 //import c3 from 'c3';
 //import d3 from 'd3';
 
+let chart;
 
 class Graph extends React.Component {
 
@@ -28,7 +29,7 @@ class Graph extends React.Component {
                 dateVal[factor.name] = log.value;
             }
         }
-        console.log(dateMap);
+
         let dates = Object.keys(dateMap).sort();
 
         dates.map((date) => {
@@ -37,24 +38,9 @@ class Graph extends React.Component {
 
         return {data, keys};
     }
-    //this.refs.panel
-    componentDidMount() {
-        //console.log(this.props);
-        console.log(this.getLineData(this.props.factors));
-        this.renderChart(this.getLineData(this.props.factors));
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        //console.log(this.props);
-        console.log(this.getLineData(nextProps.factors));
-        this.renderChart(this.getLineData(nextProps.factors));
-       // return false;
-        return true;
-    }
 
     renderChart({data, keys}) {
-        const chart = c3.generate({
-            bindto: '#chart',
+        chart = c3.generate({
             data: {
                 json: data,
                 keys: {
@@ -62,6 +48,7 @@ class Graph extends React.Component {
                     value: keys
                 }
             },
+            bindto: '#chart',
             axis: {
                 x: {
                     label: {
@@ -74,7 +61,7 @@ class Graph extends React.Component {
                         format: '%Y-%m-%d',
                         rotate: -40,
                         culling: {
-                            max: 6
+                            max: 10
                         }
                     },
                     height: 75
@@ -86,6 +73,30 @@ class Graph extends React.Component {
                 }
             }
         });
+    }
+
+    updateChart({data, keys}) {
+        chart.load({
+            json: data,
+            keys: {
+                x: 'date',
+                value: keys
+            }
+        });
+    }
+
+    componentDidMount() {
+
+        console.log(this.getLineData(this.props.factors));
+        this.renderChart(this.getLineData(this.props.factors));
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+
+        console.log(this.getLineData(nextProps.factors));
+        this.updateChart(this.getLineData(nextProps.factors));
+
+        return false;
     }
 
     render() {

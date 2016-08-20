@@ -1,3 +1,4 @@
+import handleError from '../errors/handle';
 import * as types from './types';
 
 export function addFactor(text) {
@@ -8,7 +9,13 @@ export function addFactor(text) {
 
 export function addLog(data) {
     return () => {
-        Meteor.call('addLog', data);
+        Meteor.call('addLog', data, handleError);
+    };
+}
+
+export function removeLog(data) {
+    return () => {
+        Meteor.call('removeLog', data);
     };
 }
 
