@@ -14,6 +14,7 @@
     "react-addons-pure-render-mixin": "^15.0.2",
     "react-bootstrap": "^0.29.4",
     "react-bootstrap-datetime": "0.0.9",
+    "react-datepicker": "github:damlu/react-datepicker#highlight-dates",
     "react-dom": "^15.0.2",
     "react-mixin": "^3.0.5",
     "react-redux": "^4.4.5",
